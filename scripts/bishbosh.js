@@ -1,11 +1,11 @@
-const generateButton = document.querySelector("#generateButton")
-generateButton.addEventListener('click', BishBosh);
+const generateButton = document.querySelector("#generateButton");
+generateButton.addEventListener('click', BishBosh)
 
 function BishBosh() {
-    const loopEnd = parseInt(document.getElementById('loopEnd').value);
-    const bishNumber = parseInt(document.getElementById('bishNumber').value);
-    const boshNumber = parseInt(document.getElementById('boshNumber').value);
-    const resultDiv = document.getElementById('result');
+    const loopEnd = parseInt(document.querySelector('#loopEnd').value);
+    const bishNumber = parseInt(document.querySelector('#bishNumber').value);
+    const boshNumber = parseInt(document.querySelector('#boshNumber').value);
+    const resultDiv = document.querySelector('#result');
 
     if (loopEnd < 1 || bishNumber < 1 || boshNumber < 1) {
         resultDiv.textContent = 'Please enter positive numbers only.';
@@ -24,7 +24,7 @@ function BishBosh() {
         } else {
             output.push(i.toString());
         }
-    }
 
-    resultDiv.textContent = output.join(', ');
+        resultDiv.textContent = output.join(', ');
+    }
 }
