@@ -1,0 +1,16 @@
+/*ToDo */
+.completed {
+    text-decoration: line-through;
+    background-color: #e9ecef;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-actions {
+    display: flex;
+    gap: 10px;
+}
