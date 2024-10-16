@@ -1,1 +1,0 @@
-document.title = "JS Apps Project";
