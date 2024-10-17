@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addButton.addEventListener('click', addItem);
 
+    itemInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            addItem();
+        }
+    });
+
     function addItem() {
         const itemText = itemInput.value.trim();
         if (itemText !== '') {
@@ -29,10 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-
-    itemInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            addItem();
-        }
-    });
 });
