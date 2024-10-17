@@ -14,3 +14,44 @@
     display: flex;
     gap: 10px;
 }
+
+/*Header*/
+.website-header {
+    background-color: #6F4E37 !important; /* A coffee brown color */
+    color: #FFF8DC !important; /* Cornsilk color for text */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    position: relative;
+    z-index: 1000; /* Ensures header is above other elements */
+}
+
+.website-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.website-header .navbar-nav .nav-link {
+    color: #000000; /* Black color for nav links */
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.website-header .navbar-nav .nav-link:hover,
+.website-header .navbar-nav .nav-link:focus {
+    color: #FFD700; /* Gold color on hover/focus */
+}
+
+
+/*Body*/
+body {
+    background-color: #F2E8CF !important; /* Cream color */
+    color: #1A120B !important; /* Dark text for contrast */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Allow main content to grow and push footer down */
+}
