@@ -1,7 +1,7 @@
 const headerElement = $('#header');
 const footerElement = $('#footer');
 
-const headerHTML = `
+const headerContent = `
 <h1>JavaScript Apps Project</h1>
     <nav>
         <a href="../index.html">Home</a>
@@ -13,8 +13,8 @@ const headerHTML = `
 `;
 
 const footerContent = `
-    <p>© 2024 Andreas Johansson. All rights reserved.</p>
+    <p>©2024 Andreas Johansson. All rights reserved.</p>
 `
 
-headerElement.html(headerHTML).css(headerStyle);
-footerElement.html(footerContent);
+headerElement.html(headerContent).append('<link rel="stylesheet" type="text/css" href="../styles/header.css">');
+footerElement.html(footerContent).append('<link rel="stylesheet" type="text/css" href="../styles/footer.css">');
