@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    min-height: 100vh;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    flex-grow: 1;
+    padding: 2rem 0;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+#itemInput {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+#addButton {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+#addButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Centering the shopping list */
+#shoppingList {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Full width for centering */
+    max-width: 500px; /* Max width for the list */
+}
+
+#shoppingList li {
+    background-color: white; /* White background for list items */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 0.5rem; /* Space between items */
+    padding: 1rem; /* Padding inside list items */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+}
