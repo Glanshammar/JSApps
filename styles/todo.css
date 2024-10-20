@@ -59,6 +59,30 @@ h2 {
     background-color: #0056b3; /* Darker shade on hover */
 }
 
+.button {
+    padding: 0.5rem 1rem; /* Padding for the button */
+    font-size: 1rem; /* Font size */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.delete {
+    background-color: #dc3545; /* Red background for danger */
+    color: white; /* White text color */
+}
+
+.delete:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Optional: Add a small size class if needed */
+.button.sm {
+    padding: 0.25rem 0.5rem; /* Smaller padding for small buttons */
+    font-size: 0.875rem; /* Slightly smaller font size */
+}
+
 /* Centering the shopping list */
 #shoppingList {
     list-style-type: none; /* Remove bullet points */
