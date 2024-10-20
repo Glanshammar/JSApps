@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bish Bosh</title>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header"></header>
+
+    <main>
+        <section id="explanation">
+            <p>Bish-Bosh is a number game that replaces certain numbers with words based on their divisibility. This page was created to demonstrate JavaScript functionality and DOM manipulation.</p>
+        </section>
+
+        <section id="input-section">
+            <label for="loopEnd">End number:</label>
+            <input type="number" id="loopEnd" min="1" value="100">
+
+            <label for="bishNumber">Bish number:</label>
+            <input type="number" id="bishNumber" min="1" value="3">
+
+            <label for="boshNumber">Bosh number:</label>
+            <input type="number" id="boshNumber" min="1" value="4">
+
+            <button id="generateButton">Generate</button>
+        </section>
+
+        <section id="output-section">
+            <div id="result"></div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="bishbosh.js"></script>
+    <script src="../header-footer.js"></script>
+
+</body>
+</html>
