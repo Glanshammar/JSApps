@@ -1,4 +1,6 @@
 $(function() {
+    document.title = "JavaScript Apps - Bish Bosh";
+
     const $generateButton = $('#generateButton');
     const $loopEnd = $('#loopEnd');
     const $bishNumber = $('#bishNumber');
