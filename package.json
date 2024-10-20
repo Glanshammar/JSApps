@@ -2,7 +2,7 @@
   "name": "js-apps",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "pages/index.html",
   "scripts": {
   },
   "private": true
