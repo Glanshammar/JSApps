@@ -1,39 +1,36 @@
 $(function() {
     document.title = "JavaScript Apps - Shopping List";
 
-    const itemInput = $('#');
-    const addButton = document.getElementById('addButton');
-    const shoppingList = document.getElementById('shoppingList');
+    const $itemInput = $('#itemInput');
+    const $addButton = $('#addButton');
+    const $shoppingList = $('#shoppingList');
 
-    addButton.addEventListener('click', addItem);
+    $addButton.on('click', addItem);
 
-    itemInput.addEventListener('keypress', (e) => {
+    $itemInput.on('keypress', (e) => {
         if (e.key === 'Enter') {
             addItem();
         }
     });
 
     function addItem() {
-        const itemText = itemInput.value.trim();
+        const itemText = $itemInput.val().trim();
         if (itemText !== '') {
-            const li = document.createElement('li');
-            li.className = 'list-group-item';
-            li.innerHTML = `
+            const $li = $('<li>').addClass('list-group-item').html(`
                 <span class="item-text">${itemText}</span>
                 <div class="item-actions">
-                    <button class="btn btn-sm btn-success toggle-btn">Klar</button>
-                    <button class="btn btn-sm btn-danger delete-btn">Ta bort</button>
+                    <button class="button delete delete-btn">Ta bort</button>
                 </div>
-            `;
-            shoppingList.appendChild(li);
-            itemInput.value = '';
+            `);
+            $shoppingList.append($li);
+            $itemInput.val('');
 
-            li.querySelector('.toggle-btn').addEventListener('click', () => {
-                li.classList.toggle('completed');
+            $li.find('.toggle-btn').on('click', function() {
+                $li.toggleClass('completed');
             });
 
-            li.querySelector('.delete-btn').addEventListener('click', () => {
-                li.remove();
+            $li.find('.delete-btn').on('click', function() {
+                $li.remove();
             });
         }
     }
