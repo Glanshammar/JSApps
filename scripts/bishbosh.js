@@ -1,17 +1,19 @@
 $(function() {
-    const generateButton = $('#generateButton');
-    const loopEnd = parseInt($('#loopEnd').value);
-    const bishNumber = parseInt($('#bishNumber').value);
-    const boshNumber = parseInt($('#boshNumber').value);
-    const resultDiv = $('#result');
+    const $generateButton = $('#generateButton');
+    const $loopEnd = $('#loopEnd');
+    const $bishNumber = $('#bishNumber');
+    const $boshNumber = $('#boshNumber');
+    const $resultDiv = $('#result');
 
-    generateButton.addEventListener('click', BishBosh)
+    $generateButton.on('click', BishBosh);
 
     function BishBosh() {
-
+        const loopEnd = parseInt($loopEnd.val());
+        const bishNumber = parseInt($bishNumber.val());
+        const boshNumber = parseInt($boshNumber.val());
 
         if (loopEnd < 1 || bishNumber < 1 || boshNumber < 1) {
-            resultDiv.textContent = 'Please enter positive numbers only.';
+            $resultDiv.text('Please enter positive numbers only.');
             return;
         }
 
@@ -27,8 +29,8 @@ $(function() {
             } else {
                 output.push(i.toString());
             }
-
-            resultDiv.textContent = output.join(', ');
         }
+
+        $resultDiv.text(output.join(', '));
     }
-})
+});
