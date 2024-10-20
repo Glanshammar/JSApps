@@ -4,11 +4,11 @@ const footerElement = $('#footer');
 const headerHTML = `
 <h1>JavaScript Apps Project</h1>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="bishbosh/bishbosh.html">Bish Bosh</a>
-        <a href="todo/todo.html">ToDo</a>
-        <a href="starwars/starwars.html">Star Wars Index</a>
-        <a href="cardgame/cardgame.html">Card Game</a>
+        <a href="../index.html">Home</a>
+        <a href="../pages/bishbosh.html">Bish Bosh</a>
+        <a href="../pages/todo.html">ToDo</a>
+        <a href="../pages/starwars.html">Star Wars Index</a>
+        <a href="../pages/cardgame.html">Card Game</a>
     </nav>
 `;
 
