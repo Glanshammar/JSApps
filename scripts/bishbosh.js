@@ -2,10 +2,10 @@ $(function() {
     document.title = "JavaScript Apps - Bish Bosh";
 
     const $generateButton = $('#generateButton');
+    const $resultDiv = $('#result');
     const $loopEnd = $('#loopEnd');
     const $bishNumber = $('#bishNumber');
     const $boshNumber = $('#boshNumber');
-    const $resultDiv = $('#result');
 
     $generateButton.on('click', BishBosh);
 
