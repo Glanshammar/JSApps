@@ -1,4 +1,4 @@
-$(function() {
+document.addEventListener('DOMContentLoaded', function() {
     document.title = "JavaScript Apps - Star Wars Biometrics";
 
     const characterName = document.getElementById('characterName');
@@ -19,13 +19,12 @@ $(function() {
             .then(data => {
                 if (data.result && data.result.length > 0) {
                     const character = data.result[0].properties;
-                    const biometrics = `
+                    output.value = `
                         Height: ${character.height}cm
                         Weight: ${character.mass}kg
                         Gender: ${character.gender}
                         Hair Color: ${character.hair_color}
                     `;
-                    output.value = biometrics;
                 } else {
                     output.value = "Character couldn't be found";
                 }
