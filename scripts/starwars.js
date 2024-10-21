@@ -1,16 +1,22 @@
 $(function() {
     document.title = "JavaScript Apps - Star Wars Biometrics";
 
-    const $characterName = $('#characterName');
-    const $searchButton = $('#searchButton');
-    const $output = $('#output');
+    const characterName = document.getElementById('characterName');
+    const searchButton = document.getElementById('searchButton');
+    const output = document.getElementById('output');
 
     function getCharacter() {
-        const characterName = $characterName.val();
-        const fullUri = `https://www.swapi.tech/api/people/?name=${characterName}`;
+        const name = characterName.value;
+        const fullUri = `https://www.swapi.tech/api/people/?name=${name}`;
 
-        $.getJSON(fullUri)
-            .done(function(data) {
+        fetch(fullUri)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
                 if (data.result && data.result.length > 0) {
                     const character = data.result[0].properties;
                     const biometrics = `
@@ -19,20 +25,20 @@ $(function() {
                         Gender: ${character.gender}
                         Hair Color: ${character.hair_color}
                     `;
-                    $output.val(biometrics);
+                    output.value = biometrics;
                 } else {
-                    $output.val("Character couldn't be found");
+                    output.value = "Character couldn't be found";
                 }
             })
-            .fail(function(jqXHR, textStatus, errorThrown) {
-                console.log(errorThrown);
-                $output.val("An error occurred while searching");
+            .catch(error => {
+                console.error('Error:', error);
+                output.value = "An error occurred while searching";
             });
     }
 
-    $searchButton.on('click', getCharacter);
+    searchButton.addEventListener('click', getCharacter);
 
-    $characterName.on('keypress', (e) => {
+    characterName.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
             getCharacter();
