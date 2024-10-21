@@ -1,36 +1,46 @@
-$(function() {
+document.addEventListener('DOMContentLoaded', function() {
     document.title = "JavaScript Apps - Shopping List";
 
-    const $itemInput = $('#itemInput');
-    const $addButton = $('#addButton');
-    const $shoppingList = $('#shoppingList');
+    const itemInput = document.getElementById('itemInput');
+    const addButton = document.getElementById('addButton');
+    const shoppingList = document.getElementById('shoppingList');
 
-    $addButton.on('click', addItem);
+    addButton.addEventListener('click', addItem);
 
-    $itemInput.on('keypress', (e) => {
+    itemInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             addItem();
         }
     });
 
     function addItem() {
-        const itemText = $itemInput.val().trim();
+        const itemText = itemInput.value.trim();
         if (itemText !== '') {
-            const $li = $('<li>').addClass('list-group-item').html(`
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.innerHTML = `
                 <span class="item-text">${itemText}</span>
                 <div class="item-actions">
-                    <button class="button delete delete-btn">Ta bort</button>
+                    <button class="button done done-btn">Done</button>
+                    <button class="button delete delete-btn">Remove</button>
                 </div>
-            `);
-            $shoppingList.append($li);
-            $itemInput.val('');
+            `;
+            shoppingList.appendChild(li);
+            itemInput.value = '';
 
-            $li.find('.toggle-btn').on('click', function() {
-                $li.toggleClass('completed');
+            const deleteBtn = li.querySelector('.delete-btn');
+            deleteBtn.addEventListener('click', function() {
+                li.remove();
             });
 
-            $li.find('.delete-btn').on('click', function() {
-                $li.remove();
+            const doneBtn = li.querySelector('.done-btn');
+            doneBtn.addEventListener('click', function() {
+                li.classList.toggle('done');
+                if (li.classList.contains('done')) {
+                    doneBtn.textContent = 'Undo';
+                } else {
+                    doneBtn.textContent = 'Done';
+                }
             });
         }
     }
